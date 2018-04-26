@@ -1,5 +1,8 @@
+var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require("copy-webpack-plugin");
+
 
 module.exports = {
 	mode: "development",
@@ -14,7 +17,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
             title: 'DEV MODE: web games base',
             template: path.join(__dirname, 'templates/index.ejs')
-        })
+        }),
+        new CopyWebpackPlugin([
+			{ from: './node_modules/phaser/dist/phaser.min.js', to: '/lib' },
+		])
 	],
 	devServer: {
         contentBase: path.join(__dirname, 'dist'),
@@ -29,15 +35,16 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-              test: /\.tsx?$/,
-              use: 'ts-loader',
-              exclude: /node_modules/
-            }
+           // { test: /\.ts$/, enforce: 'pre', loader: 'tslint-loader' },
+            { test: /phaser-split\.js$/, loader: 'expose-loader?Phaser' },
+            { test: /\.ts$/, loader: 'ts-loader', exclude: '/node_modules/' }
         ]
     },
     resolve: {
-        extensions: [ '.tsx', '.ts', '.js' ]
+        extensions: ['.ts', '.js'],
+        alias: {
+            phaser: path.join(__dirname, 'node_modules/phaser/dist/phaser.js'),
+        }
     },
     output: {
         filename: 'bundle.js',
