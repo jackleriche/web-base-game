@@ -3,8 +3,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	mode: "development",
-	devtool: 'source-map',
-    entry: path.join(__dirname, "src/index.js"),
+    devtool: 'inline-source-map',
+    entry: path.join(__dirname, "src/index.ts"),
+    watch: true,
 	output: {
         path: path.join(__dirname, "dist"),
 		filename: 'index.js'
@@ -26,4 +27,20 @@ module.exports = {
             ignored: /node_modules/
         }
     },
+    module: {
+        rules: [
+            {
+              test: /\.tsx?$/,
+              use: 'ts-loader',
+              exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ]
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
 };
