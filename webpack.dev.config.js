@@ -17,10 +17,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
             title: 'DEV MODE: web games base',
             template: path.join(__dirname, 'templates/index.ejs')
-        }),
-        new CopyWebpackPlugin([
-			{ from: './node_modules/phaser/dist/phaser.min.js', to: '/lib' },
-		])
+        })
 	],
 	devServer: {
         contentBase: path.join(__dirname, 'dist'),

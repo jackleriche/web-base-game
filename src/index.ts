@@ -1,16 +1,18 @@
 /// <reference path="../node_modules/phaser/typescript/phaser.comments.d.ts" />
-import { Ting } from "./Ting";
 import "phaser";
 
-class Boom { 
+class Game extends Phaser.Game { 
 
-    constructor() {
-        console.log("hello there");
-        console.log("now i wonder if it will compile this in real time");
+    constructor(config: any) {
+        super(config);
     }
 }
 
-const test: Boom = new Boom();
-const externalTest: Ting = new Ting();
 
-const fuck: Phaser.Game = new Phaser.Game();
+const config: any = {
+    type: Phaser.AUTO,
+    width: window.innerWidth * window.devicePixelRatio,
+    height: window.innerHeight * window.devicePixelRatio,
+};
+
+const game: Phaser.Game = new Game(config);
