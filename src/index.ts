@@ -3,6 +3,9 @@ import "phaser";
 
 class Game extends Phaser.Game { 
 
+    public preload() {
+    }
+
     constructor(config: any) {
         super(config);
     }
