@@ -1,21 +1,20 @@
 /// <reference path="../node_modules/phaser/typescript/phaser.comments.d.ts" />
 import "phaser";
+import { SceneA } from "./SceneA";
 
 class Game extends Phaser.Game { 
-
-    public preload() {
-    }
-
-    constructor(config: any) {
+    constructor(config: GameConfig) {
         super(config);
     }
 }
 
-
-const config: any = {
+const config: GameConfig = {
     type: Phaser.AUTO,
     width: window.innerWidth * window.devicePixelRatio,
     height: window.innerHeight * window.devicePixelRatio,
+    scene: [SceneA]
 };
 
-const game: Phaser.Game = new Game(config);
+window.onload = () => {
+    const game: Phaser.Game = new Game(config); 
+}

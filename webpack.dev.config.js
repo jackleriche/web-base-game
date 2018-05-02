@@ -17,7 +17,10 @@ module.exports = {
 		new HtmlWebpackPlugin({
             title: 'DEV MODE: web games base',
             template: path.join(__dirname, 'templates/index.ejs')
-        })
+        }),
+        new CopyWebpackPlugin([
+            { from: './assets', to: 'assets' }
+        ])
 	],
 	devServer: {
         contentBase: path.join(__dirname, 'dist'),
