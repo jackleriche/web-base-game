@@ -7,5 +7,5 @@
     "allowJs": true,
     "sourceMap": true
   },
-  "files": ["./node_modules/phaser/typescript/phaser.comments.d.ts"]
+  "files": ["./node_modules/phaser/types/phaser.d.ts"]
 }
