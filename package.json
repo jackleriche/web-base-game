@@ -4,23 +4,22 @@
   "description": "base template for future web games, including output for cordova and electron",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "webpack-dev-server --config webpack.dev.config.js --open",
     "webpack:dev": "webpack --config webpack.dev.config.js"
   },
   "author": "Jack Le Riche",
   "license": "ISC",
   "devDependencies": {
-    "copy-webpack-plugin": "^4.5.1",
+    "copy-webpack-plugin": "^5.0.4",
     "expose-loader": "^0.7.5",
     "html-webpack-plugin": "^3.2.0",
-    "jasmine": "^3.1.0",
-    "phaser": "^3.6.0",
-    "ts-loader": "^4.2.0",
-    "tslint": "^5.9.1",
-    "typescript": "^2.8.3",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.15",
-    "webpack-dev-server": "^3.1.1"
+    "jasmine": "^3.5.0",
+    "phaser": "^3.19.0",
+    "ts-loader": "^6.2.0",
+    "tslint": "^5.20.0",
+    "typescript": "3.6.3",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
   }
 }

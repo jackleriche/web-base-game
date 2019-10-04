@@ -1,13 +1,11 @@
 {
-	"compilerOptions": {
-		"outDir": "./dist/",
-		"noImplicitAny": true,
-		"module": "es6",
-		"target": "es5",
-		"allowJs": true,
-		"sourceMap": true,
-	},
-	"files": [
-        "./node_modules/phaser/typescript/phaser.comments.d.ts"
-    ]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "sourceMap": true
+  },
+  "files": ["./node_modules/phaser/typescript/phaser.comments.d.ts"]
 }
