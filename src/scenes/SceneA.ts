@@ -1,3 +1,5 @@
+import Game from "./../Game";
+
 export class SceneA extends Phaser.Scene {
   private glove: Phaser.GameObjects.Image;
 
@@ -10,8 +12,8 @@ export class SceneA extends Phaser.Scene {
   }
 
   public create(): void {
-    this.glove = this.add.image(0, 0, "glove");
+    this.glove = this.add.image(Game.WIDTH / 2 , Game.HEIGHT / 2, "glove");
     this.glove.setScale(0.5);
-    this.glove.setOrigin();
+    this.glove.setOrigin(0.5, 0.5);
   }
 }

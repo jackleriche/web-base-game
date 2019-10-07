@@ -5,8 +5,8 @@ import { SceneB } from "./scenes/SceneB";
 
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
-  width: window.innerWidth * window.devicePixelRatio,
-  height: window.innerHeight * window.devicePixelRatio,
+  width: window.innerWidth,
+  height: window.innerHeight,
   scene: [SceneA, SceneB]
 };
 
