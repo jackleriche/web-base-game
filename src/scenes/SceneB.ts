@@ -13,6 +13,6 @@ export class SceneB extends Phaser.Scene {
 
   public create(): void {
     this.glove = this.add.image(Game.WIDTH / 2, Game.HEIGHT / 2, "glove");
-    this.glove.setScale(0.5);
+    this.glove.setScale(0.7);
   }
 }
